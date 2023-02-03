@@ -1,27 +1,44 @@
-# Next.js + Tailwind CSS Example
+# Portfolio 
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This is a portfolio website build with Nextjs and Tailwind CSS. This is a fully dynamic website.
 
-## Deploy your own
+## Getting Started
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+To run the website locally, follow these steps:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+1. Clone the repository to your local machine
+2. Run `npm install` to install the dependencies
+3. Run `npm run dev` to start the development server
+4. Open `http://localhost:3000` in your browser to view the website
 
-## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## Technologies Used
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
+- Next.js: A React-based framework for building server-side rendered and statically generated web applications.
+- Tailwind CSS: A utility-first CSS framework for rapidly building custom designs.
+- Hygraph: A powerful and flexible graph database for storing and querying data.
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## Customizing the Website
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+This website is fully custo,izable to suit your personal style and preferences. You can edit the following files
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- `pages/index.js`: The main page that displays your portfolio information.
+- `public/styles.css`: The stylesheet that contains the Tailwind CSS classes.
+- `data/projects.js`: The data file that contains information about your projects.
+
+## Deployment
+
+The website can be easily deployed to any hosting service that supports Node.js, such as Vercel, Heroku, or DigitalOcean.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+- Next.js
+- Tailwind CSS
+- Hygraph
+- All the amazing open-source projects used in this website.
+
+

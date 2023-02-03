@@ -21,26 +21,6 @@ function About() {
   const name = title.map((item: any) => item);
   // console.log(result);
 
-  const scaleVariants = {
-    whileInView: {
-      scale: [0, 1],
-      opacity: [0, 1],
-      transition: {
-        duration: 1,
-        ease: 'easeInOut',
-      },
-    },
-  };
-  const gradVariants = {
-    whileInView: {
-      scale: [0, 1],
-      opacity: [0, 0.3],
-      transition: {
-        duration: 1,
-        ease: 'easeInOut',
-      },
-    },
-  };
   const transitionVariants = {
     whileInView: {
       translateX: [100, 0],
@@ -55,10 +35,11 @@ function About() {
 
   return (
     <section className='min-h-screen items-center justify-center flex w-screen mx-auto bg-white relative' id='about'>
+      <div className='w-screen h-60 bg-gradient-to-b from-indigo-500 absolute opacity-20 top-0 left-0 gradient'></div>
       {result.slice(0, 1).map((item: any) => (
         <div className='px-8 md:px-0 py-8 md:py-16 container mx-auto lg:max-w-6xl relative' key={item.id}>
           <div className='grid grid-cols-1 lg:grid-cols-2 items-center h-full justify-center w-full gap-8 relative'>
-            <motion.div variants={gradVariants} whileInView={gradVariants.whileInView} className={`w-96 h-96 rounded-full hidden lg:block bg-gradient-to-br from-purple-500 to-pink-500 absolute z-0 opacity-40 blur-3xl left-1/4 top-0`}></motion.div>
+            {/* <motion.div variants={gradVariants} whileInView={gradVariants.whileInView} className={`w-96 h-96 rounded-full hidden lg:block bg-gradient-to-br from-purple-500 to-pink-500 absolute z-0 opacity-40 blur-3xl left-1/4 top-0`}></motion.div> */}
             <motion.div
               variants={transitionVariants}
               whileInView={transitionVariants.whileInView}

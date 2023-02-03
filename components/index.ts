@@ -9,6 +9,7 @@ import Card from "./AboutCard";
 import Services from "./Services";
 import Experience from "./Experience";
 import Tooltip from "./Tooltip";
+import MarqueeComponent from "./MarqueeComponent";
 
 
 export {
@@ -22,5 +23,6 @@ export {
     Card,
     Services,
     Experience,
-    Tooltip
+    Tooltip,
+    MarqueeComponent
 }

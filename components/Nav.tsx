@@ -22,7 +22,7 @@ function Nav({ id, pathname }: any) {
     // }, [router.pathname, href]);
 
     return (
-        <div className='flex items-center justify-center max-w-xs md:max-w-md absolute bottom-8 left-0 right-0 mx-auto rounded-lg navbar space-x-5 py-4 md:py-2'>
+        <div className='flex items-center justify-center max-w-xs md:max-w-md absolute bottom-8 left-0 right-0 mx-auto rounded-lg navbar space-x-6 md:space-x-5 py-4 md:py-2'>
             <a href={'#home'} className='relative group'>
                 <div className='flex items-center flex-col p-0 md:p-2'>
                     <HiHome className={`w-6 h-6 hover:text-violet-900 ${active ? 'text-violet-900' : 'text-violet-700'}`} />

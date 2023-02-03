@@ -37,16 +37,6 @@ function Work() {
       },
     },
   };
-  const gradVariants = {
-    whileInView: {
-      scale: [0, 1],
-      opacity: [0, 0.3],
-      transition: {
-        duration: 1,
-        ease: 'easeInOut',
-      },
-    },
-  };
 
 
   return (
@@ -54,18 +44,18 @@ function Work() {
       <div className='px-8 md:px-0 py-8 container mx-auto lg:max-w-6xl'>
         <div className='flex flex-col items-center justify-center w-full'>
           {/* top */}
-          <motion.div variants={transitionVariants} whileInView={transitionVariants.whileInView} className='flex flex-col items-center justify-center w-full py-8 mb-8 md:mb-16 space-y-4 z-[1]'>
+          <motion.div variants={transitionVariants} whileInView={transitionVariants.whileInView} className='flex flex-col items-start lg:items-center justify-center w-full py-8 mb-8 md:mb-16 space-y-4 z-[1]'>
+            <span className='w-14 h-1 rounded-md block md:hidden bg-gradient-to-r from-teal-500 to-blue-500'></span>
             <h2 className='text-2xl md:text-3xl font-medium'>
-              My projects 
+              My projects
             </h2>
-            <p className='text-slate-500 text-center'>
+            <p className='text-slate-500 text-start md:text-center'>
               Making good projects show case your skills. Have a look at some of my projects with various technologies.
             </p>
           </motion.div>
 
           {/* work */}
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full items-center justify-center gap-10 relative'>
-            <motion.div whileInView={gradVariants.whileInView} className={`w-96 h-96 rounded-full hidden lg:block bg-gradient-to-br from-fuchsia-500 to-rose-500 absolute z-0 opacity-30 blur-3xl left-20 bottom-0`}></motion.div>
             {projects.map((item: any) => (
               <motion.div
                 variants={scaleVariants}

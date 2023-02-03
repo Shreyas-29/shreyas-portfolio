@@ -39,16 +39,6 @@ function Services() {
             },
         },
     };
-    const scaleVariants = {
-        whileInView: {
-            scale: [0, 1],
-            opacity: [0, 0.3],
-            transition: {
-                duration: 1,
-                ease: 'easeInOut',
-            },
-        },
-    };
     const transitionVariants = {
         whileInView: {
             translateX: [-100, 0],
@@ -64,10 +54,9 @@ function Services() {
     return (
         <section className='min-h-screen items-center justify-center flex w-screen mx-auto relative' id='services'>
             <div className='px-8 md:px-0 py-8 md:py-16 container mx-auto lg:max-w-6xl relative my-auto'>
-                <div className='grid grid-cols-1 lg:grid-cols-2 items-center !h-full justify-center w-full gap-8'>
+                <div className='flex flex-col-reverse lg:grid grid-cols-1 lg:grid-cols-2 items-center !h-full justify-center w-full gap-8'>
                     {/* left */}
                     <div className='grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-5 w-full relative'>
-                        <motion.div whileInView={scaleVariants.whileInView} className={`w-96 h-96 rounded-full hidden lg:block bg-gradient-to-br from-emerald-500 to-blue-500 absolute z-0 opacity-30 blur-3xl left-0 -top-20`}></motion.div>
                         <div className='flex items-center justify-center flex-col space-y-5 z-[1]'>
                             {services.slice(0, 2).map((item: any) => (
                                 <motion.div

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { About, Contact,  Hero, Services, Skills, Work } from '../components';
+import { About, Contact,  Hero, MarqueeComponent, Services, Skills, Work } from '../components';
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +11,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className='relative w-screen flex flex-col items-center'>
+        <MarqueeComponent />
         <Hero />
         <About />
         <Services />

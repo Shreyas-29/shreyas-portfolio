@@ -64,7 +64,7 @@ function Skills() {
             whileInView={scaleVariants.whileInView}
             className='flex flex-col items-start justify-start space-y-5 md:space-y-7 my-12 md:my-0'>
             <div className='flex flex-col items-start justify-start'>
-              <span className='bg-gradient-to-r from-blue-500 to-fuchsia-500 h-1 w-12 rounded-sm mb-4'></span>
+              <span className='bg-gradient-to-r from-purple-500 to-rose-500 h-1 w-12 rounded-sm mb-4'></span>
               <div className='flex items-start w-full'>
                 <h4 className='text-2xl md:text-3xl font-medium'>
                   Skills and Experiences

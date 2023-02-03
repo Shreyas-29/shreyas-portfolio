@@ -1,7 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, Attributes } from 'react';
 import { motion } from 'framer-motion';
 import { getClient } from '../graphql';
 import Image from 'next/image';
+
+
+type Ref<T> = string | ((instance: T) => any);
+
+interface ClassAttributes<T> extends Attributes {
+  ref?: Ref<T>;
+}
 
 function Contact() {
 
@@ -10,12 +17,12 @@ function Contact() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const nameEl = useRef();
-  const emailEl = useRef();
-  const messageEl = useRef();
+  const nameEl = React.useRef<HTMLInputElement>(null);
+  const emailEl = React.useRef<HTMLInputElement>(null);
+  const messageEl = React.useRef<HTMLTextAreaElement>(null);
 
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) => {
     setError(false);
     setFormdata({
       ...formdata,
@@ -28,7 +35,7 @@ function Contact() {
     setLoading(true);
 
     // @ts-ignore
-    const { value: name } = nameEl.current;
+    const { value: name } = nameEl.current as HTMLInputElement | null;
     // @ts-ignore
     const { value: email } = emailEl.current;
     // @ts-ignore
@@ -42,7 +49,7 @@ function Contact() {
 
     const clientObj = { name, email, message };
 
-    getClient(clientObj).then((res: any) => {
+    getClient(clientObj).then(() => {
       setTimeout(() => {
         setSubmited(true);
         setLoading(false);
@@ -80,16 +87,46 @@ function Contact() {
         {!submited ? (
           <div className='flex items-center justify-center flex-col space-y-5 w-full mt-6'>
             <div className='w-full md:w-3/5'>
-              <input ref={nameEl} autoComplete='off' required value={formdata.name} onChange={handleChange} type="text" placeholder='Your Name' name='name' className='outline-none border rounded-md px-5 py-2 bg-slate-100 w-full' />
+              <input
+                ref={nameEl}
+                autoComplete='off'
+                required
+                value={formdata.name}
+                onChange={handleChange}
+                type="text"
+                placeholder='Your Name'
+                name='name'
+                className='outline-none border rounded-md px-5 py-2 bg-slate-100 w-full'
+              />
             </div>
             <div className='w-full md:w-3/5'>
-              <input ref={emailEl} autoComplete='off' required onChange={handleChange} type="email" placeholder='Your Email' name='email' className='outline-none border rounded-md px-5 py-2 bg-slate-100 w-full' />
+              <input
+                ref={emailEl}
+                autoComplete='off'
+                required
+                onChange={handleChange}
+                type="email"
+                placeholder='Your Email'
+                name='email'
+                className='outline-none border rounded-md px-5 py-2 bg-slate-100 w-full'
+              />
             </div>
             <div className='w-full md:w-3/5'>
-              <textarea ref={messageEl} autoComplete='off' required onChange={handleChange} placeholder='Your Message' rows={4} name='message' className='resize-none outline-none border rounded-md px-5 py-2 bg-slate-100 w-full' />
+              <textarea
+                ref={messageEl}
+                autoComplete='off'
+                required
+                onChange={handleChange}
+                placeholder='Your Message'
+                rows={4}
+                name='message'
+                className='resize-none outline-none border rounded-md px-5 py-2 bg-slate-100 w-full'
+              />
             </div>
+
             {error && <p className='w-full text-center text-sm text-red-500'>
               All fields are required!</p>}
+
             <div className='w-full items-center flex justify-center'>
               <button
                 onClick={handleSubmit}
@@ -108,8 +145,8 @@ function Contact() {
           <div className='flex items-center justify-center w-full my-8'>
             <p className='text-lg font-normal bg-green-100 px-8 py-3 rounded-lg text-green-700 text-center'>
               Thank you
-                <span className='text-green-700 font-medium mx-1 !capitalize'>'{formdata.name}'</span>
-                {/* {console.log(formData.name)} */}
+              <span className='text-green-700 font-medium mx-1 !capitalize'>'{formdata.name}'</span>
+              {/* {console.log(formData.name)} */}
               for getting in touch.
             </p>
           </div>

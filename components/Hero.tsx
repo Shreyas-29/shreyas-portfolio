@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { HiOutlineDownload } from 'react-icons/hi';
 
 
 
@@ -81,9 +83,9 @@ function Hero() {
     };
 
     return (
-        <header className='min-h-screen w-screen lg:max-w-6xl mx-auto md:px-0 flex items-start justify-center pb-8 pt-10' id='home'>
+        <header className='min-h-screen w-screen lg:max-w-6xl mx-auto md:px-0 flex flex-col items-start justify-center pb-8 pt-10 relative' id='home'>
             <motion.div variants={gradVariants} whileInView={gradVariants.whileInView} className={`w-96 h-96 rounded-full hidden lg:block bg-gradient-to-br from-blue-500 to-violet-500 absolute z-0 opacity-40 blur-3xl right-1/4 top-40`}></motion.div>
-            <div className='hidden md:grid grid-cols-3 items-center justify-center w-full mt-20'>
+            <div className='hidden md:grid grid-cols-3 items-center justify-center w-full'>
 
                 {/* left */}
                 <div className='flex flex-col items-start justify-center w-full h-full relative pl-12'>
@@ -114,8 +116,7 @@ function Hero() {
                 </div>
 
                 {/* middle */}
-                <motion.div
-                    className='flex flex-col md:flex-row items-center justify-center space-y-5 md:space-y-8 relative'>
+                <motion.div className='flex flex-col md:flex-row items-center justify-center space-y-5 md:space-y-8 relative'>
                     <span className='w-96 h-96 absolute bg-transparent top-0 select-none'></span>
                     <motion.img
                         // whileInView={{ opacity: [0, 1] }}
@@ -155,6 +156,15 @@ function Hero() {
                         </div>
                     </motion.div>
                 </motion.div>
+            </div>
+            <div className='flex items-center justify-center w-full absolute top-0'>
+                <Link href="/resume.pdf" download target='_blank'>
+                    <button className="flex items-center py-2 px-4 rounded-md bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white hover:bg-gradient-to-l font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                        <HiOutlineDownload className="w-5 h-5 mr-2" />
+                        Download CV
+                    </button>
+                </Link>
+
             </div>
 
             <div className='grid items-center grid-cols-1 justify-center relative md:hidden w-full mt-0 space-y-16 py-16'>
